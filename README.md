@@ -11,7 +11,7 @@ Hi! If you wanna work with us, you gotta solve this first. Let's see what you've
 3. An applicant must solve frontend questions if applying for a frontend position.
 4. An applicant must solve backend questions if applying for a backend position.
 5. Solving both, is a bonus :)
-6. **This test should be solved until this sunday; unless specified otherwise**
+6. When you finish this test, send an e-mail containing the repository link to <hungryforthisjob@oplab.com.br>
 7. This test's instructions should be enough.
 8. Happy Coding!
 
@@ -41,4 +41,4 @@ Answer the following questions:
 
 That's it! Thanks for doing this test!
 
-🚀
+🚀💡️
