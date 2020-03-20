@@ -20,7 +20,7 @@ Using your favorite programming language:
 
 1. Implement bubble sort.
 3. Implement a linked list.
-4. Implement this [algorithm](https://www.hackerrank.com/challenges/game-of-stones-1).
+4. Implement this [algorithm](https://www.hackerrank.com/challenges/game-of-stones-1)(💡️there is no need to signup to this website. Just commit the _gameOfStones_ function implementation and that's it.💡️).
 5. Using the twitter API, create a script that given a word as an input, outputs the last 10 tweets containing that word.
 
 ### Frontend
@@ -41,4 +41,4 @@ Answer the following questions:
 
 That's it! Thanks for doing this test!
 
-🚀💡️
+🚀
