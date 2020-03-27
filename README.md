@@ -25,7 +25,7 @@ Using your favorite programming language:
 
 ### Frontend
 
-_We will be evaluating everything, from reproduction accuracy, to process. If you use ( with mastery ) tools/frameworks such as `gulp`, `react`, `angular`, `webpack`, etc..; we will take that in consideration. Also: we care about beautiful code (no __var__ allowed) 👾_
+_We will be evaluating everything, from reproduction accuracy, to process. If you use ( with mastery ) tools/frameworks such as `gulp`, `react`, `angular`, `webpack`, etc..; we will take that in consideration. Also: we care about beautiful code (~~var~~) 👾_
 
 Reproduce, faithfully, this [page]( http://ydirection.com/Aria/index-3.html ).
 
