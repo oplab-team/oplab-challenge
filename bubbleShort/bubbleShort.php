@@ -15,7 +15,13 @@
     </form>
     <div id="result">
         <?php
-            function bubbleShort($arr) {
+            /**
+             * Receives an array and returns it sorted
+             * 
+             * @param array $arr
+             * @return array
+             */
+            function bubbleShort(array $arr) {
                 do {
                     $hasChanged = false;
                     for ($i = 0; $i < count($arr) - 1; ++$i) {
@@ -29,7 +35,7 @@
                 } while ($hasChanged);
                 return $arr;
             }
-
+            // Check if the submit button was pressed
             if ($_GET['submit']) {
                 try {
                     $arr = explode(' ', $_GET['arr']);
