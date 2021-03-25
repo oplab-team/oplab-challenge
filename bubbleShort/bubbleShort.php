@@ -37,9 +37,13 @@
             }
             // Check if the submit button was pressed
             if ($_GET['submit']) {
+                // Handles exceptions
                 try {
+                    // Formats the input
                     $arr = explode(' ', $_GET['arr']);
+                    // Processes the input
                     $arr = bubbleShort($arr);
+                    // Shows the final result
                     echo '<p>Array (vetor) ordenado:</p><p>';
                     foreach($arr as $e) {
                         echo $e. ' ';
