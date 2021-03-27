@@ -36,7 +36,7 @@
                 return $arr;
             }
             // Check if the submit button was pressed
-            if ($_GET['submit']) {
+            if (isset($_GET['submit'])) {
                 // Handles exceptions
                 try {
                     // Formats the input
