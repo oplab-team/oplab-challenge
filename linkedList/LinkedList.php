@@ -25,21 +25,6 @@ class LinkedList {
         ++$this->length;
     }
 
-    public function addLast(int $element) {
-        $new = new Node($element);
-        if ($this->length == 0)
-            $this->first = $new;
-        else
-            $this->last->next = $new;
-
-        $this->last = $new;
-        ++$this->length;
-    }
-
-    public function getLength() {
-        return $this->length;
-    }
-
     public function addMiddle(int $element, int $position) {
         if ($position <= 1) {
             $this->addFirst($element);
@@ -55,20 +40,51 @@ class LinkedList {
             $aux = $aux->next;
 
         $new = new Node($element);
-        echo $aux->next->data;
         $new->next = $aux->next;
         $aux->next = $new;
         ++$this->length;
     }
 
+    public function addLast(int $element) {
+        $new = new Node($element);
+        if ($this->length == 0)
+            $this->first = $new;
+        else
+            $this->last->next = $new;
+
+        $this->last = $new;
+        ++$this->length;
+    }
+
+    function removeFirst() {
+        $removed = $this->first;
+        if ($this->length == 0)
+            throw new Exception('Empty list.');
+        if ($this->length > 1)
+            $this->first = $this->first->next;
+        --$this->length;
+    }
+
+    function removeLast() {
+        if ($this->length == 0)
+            throw new Exception('Empty list.');
+        while (true) {
+
+        }
+        --$this->length;
+    }
+
+    function remove(int $element) {
+       
+    }
+
+    function getLength() {
+        return $this->length;
+    }
+
     function toString() {
         $aux = $this->first;
         $list = '['. $aux->data;
-        if ($this->length == 1)
-            return $list. ']';
-        else if ($this->length == 2)
-            return $list. ', '. $aux->next->data. ']';
-
         while (isset($aux->next)) {
             $aux = $aux->next;
             $list .= ', '. $aux->data;
