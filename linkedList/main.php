@@ -20,9 +20,14 @@
 
     $linkedList->addFirst(1);
     echo $linkedList->toString(). '<br>';
-    $linkedList->addMiddle(3, 1);
+    $linkedList->addMiddle(3, 2);
+    $linkedList->addMiddle(0, 1);
     echo $linkedList->toString(). '<br>';
-    $linkedList->removeFirst();
+    try {
+        echo $linkedList->removeMiddle(2). '<br>';
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
     $linkedList->addFirst(2);
     echo $linkedList->toString(). '<br>';
     $linkedList->addLast(4);
