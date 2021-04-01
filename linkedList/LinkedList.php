@@ -53,9 +53,8 @@ class LinkedList {
         if ($position > $this->length + 1)
             throw new Exception('Invalid position.');
 
-        --$position;
         $aux = $this->first;
-        for ($i = 1; $i < $position; ++$i)
+        for ($i = 2; $i < $position; ++$i)
             $aux = $aux->next;
 
         $new = new Node($element);
@@ -98,16 +97,19 @@ class LinkedList {
     /**
      * Removes a specific element to the list.
      * 
+     * @param int $position
+     * @return int
      */
     function removeMiddle(int $position) {
         if ($position <= 1)
             return $this->removeFirst();
         else if ($position == $this->length)
             return $this->removeLast();
+        
         if ($this->length == 0)
             throw new Exception('Empty list.');
         else if ($position > $this->length)
-            throw new Exception('Invalid position.');
+        throw new Exception('Invalid position.');
         
         $aux = $this->first;
         for ($i = 2; $i < $position; ++$i)
@@ -118,6 +120,12 @@ class LinkedList {
         return $removed;
     }
 
+
+    /**
+     * Removes the last element from the list and returns it.
+     * 
+     * @return int
+     */
     function removeLast() {
         if ($this->length <= 1)
             return $this->removeFirst();
@@ -131,17 +139,53 @@ class LinkedList {
     }
 
     function remove(int $element) {
-       
+        if ($this->first->data == $element)
+            return $this->removeFirst();
+        else if ($this->last->data == $element)
+            return $this->removeLast();
+        
+        if ($this->length == 0)
+            throw new Exception('Empty list.');
+        
+        $aux = $this->first;
+        for ($i = 2; $aux->next->data != $element && $i < $this->length; ++$i)
+            $aux = $aux->next;
+        if ($aux->next->data == $element) {
+            $removed = $aux->next->data;
+            $aux->next = $aux->next->next;
+            --$this->length;
+            return $removed;
+        } else
+            throw new Exception('Element not found.');
     }
 
+    /**
+     * Returns the length of the list.
+     * 
+     * @return int
+     */
     function getLength() {
         return $this->length;
     }
 
-    function search($element) {
-
+    function search(int $element) {
+        if ($this->length == 0)
+            throw new Exception('Empty list.');
+        
+        $aux = $this->first;
+        for ($i = 1; $aux->data != $element && $i < $this->length; ++$i)
+            $aux = $aux->next;
+        
+        if ($aux->data == $element)
+            return $i;
+        return -1;
     }
 
+    /**
+     * Returns a string with the elements of the list
+     * 
+     * @return string
+     */
     function toString() {
         if ($this->length == 0)
             return '[]';
@@ -151,6 +195,6 @@ class LinkedList {
             $aux = $aux->next;
             $list .= ', '. $aux->data;
         }
-        return $list. ']'. $this->last->data;
+        return $list. ']';
     }
 }

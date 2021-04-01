@@ -18,21 +18,9 @@
     require_once('LinkedList.php');
     $linkedList = new LinkedList();
 
-    $linkedList->addFirst(1);
-    echo $linkedList->toString(). '<br>';
-    $linkedList->addMiddle(3, 2);
-    $linkedList->addMiddle(0, 1);
-    echo $linkedList->toString(). '<br>';
-    try {
-        echo $linkedList->removeMiddle(2). '<br>';
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
-    $linkedList->addFirst(2);
-    echo $linkedList->toString(). '<br>';
-    $linkedList->addLast(4);
-    echo $linkedList->toString(). '<br>';
-
+    for ($i = 0; $i < 10; ++$i)
+        $linkedList->addLast($i);
+    echo $linkedList->toString();
     if (isset($_GET['submit'])) {
         $linkedList = new LinkedList();
         switch($_GET['submit']) {
