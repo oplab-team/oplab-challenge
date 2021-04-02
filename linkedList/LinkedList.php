@@ -41,7 +41,7 @@ class LinkedList {
      * @param int $element
      * @param int $position
      */
-    public function addMiddle(int $element, int $position) {
+    public function addMiddle(int $position, int $element) {
         if ($position <= 1) {
             $this->addFirst($element);
             return;
@@ -196,5 +196,22 @@ class LinkedList {
             $list .= ', '. $aux->data;
         }
         return $list. ']';
+    }
+
+    /**
+     * Returns a string with the HTML formated list
+     * 
+     * @return string
+     */
+    function getFormatedList() {
+        if ($this->length == 0)
+            return '';
+        $aux = $this->first;
+        $list = '<ul id="linked_list"><li>'. $aux->data. '</li>';
+        for ($i = 2; $i <= $this->length; ++$i) {
+            $aux = $aux->next;
+            $list .= ' -> <li>'. $aux->data. '</li>';
+        }
+        return $list. '</ul>';
     }
 }
